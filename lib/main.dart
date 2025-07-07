@@ -26,35 +26,32 @@ class _FinanceApplicationState extends State<FinanceApplication> {
 
   @override
   Widget build(BuildContext context) {
-
-    final theme = ThemeData(
-      appBarTheme: AppBarTheme(
-        backgroundColor: isLightMode ? LightMode.white : DarkMode.black,
-        foregroundColor: isLightMode ? LightMode.black : DarkMode.white,
-      ),
-
-      textTheme: TextTheme(
-        titleLarge: TextStyle(
-          fontSize: 24,
-          color: isLightMode ? LightMode.black : DarkMode.white,
-        ),
-        titleMedium: TextStyle(
-          fontSize: 16,
-          color: isLightMode ? LightMode.black : DarkMode.white,
-        ),
-        titleSmall: TextStyle(
-          fontSize: 14,
-          color: isLightMode ? LightMode.black : DarkMode.white,
-        ),
-      ),
-    );
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: isLightMode ? LightMode.white : DarkMode.black,
+          foregroundColor: isLightMode ? LightMode.black : DarkMode.white,
+        ),
 
-      home: Builder(
-        builder: (context) => Scaffold(
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 24,
+            color: isLightMode ? LightMode.black : DarkMode.white,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 16,
+            color: isLightMode ? LightMode.black : DarkMode.white,
+          ),
+          titleSmall: TextStyle(
+            fontSize: 14,
+            color: isLightMode ? LightMode.black : DarkMode.white,
+          ),
+        ),
+      ),
+
+      home: Scaffold(
         backgroundColor: isLightMode ? LightMode.white : DarkMode.black,
 
         appBar: AppBar(
@@ -81,7 +78,6 @@ class _FinanceApplicationState extends State<FinanceApplication> {
             ],
           ),
         ),
-      ),
       ),
     );
   }
