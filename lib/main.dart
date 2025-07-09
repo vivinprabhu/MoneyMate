@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moneymate/bloc/login/login_bloc.dart';
 import 'package:moneymate/screens/login_screen.dart';
 
 void main() {
@@ -13,12 +15,14 @@ class FinanceApplication extends StatefulWidget {
 }
 
 class _FinanceApplicationState extends State<FinanceApplication> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: BlocProvider(
+        create: (context) => LoginBloc(),
+        child: LoginScreen(),
+      ),
     );
   }
 }
